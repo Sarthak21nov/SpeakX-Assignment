@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package QuestionsPackage;
+
+service SearchQuestion {
+    rpc getQuestion (SearchRequest) returns (SearchResponse);
+    rpc getAllQuestion (PaginationRequest) returns (SearchResponse);
+    rpc getQuestionsByTypes (SearchTypeRequest) returns (SearchResponse);
+}
+
+message PaginationRequest {
+    int32 page = 1;
+    int32 limit = 2;
+}
+
+message SearchTypeRequest {
+    string type = 1;
+    int32 page = 2;
+    int32 limit = 3;
+}
+
+message SearchRequest {
+    string query = 1;
+    int32 page = 2;
+    int32 limit = 3;
+}
+
+message SearchResponse {
+    repeated Question questions = 1;
+    int32 currentPage = 2;
+    int32 totalPages = 3;
+    int32 totalCount = 4;
+}
+
+message Question {
+    string title = 1;
+    string type = 2;
+    repeated Block blocks = 3;
+    string solution = 4;
+}
+
+message Block {
+    string text = 1;
+    bool showInOption = 2;
+    bool isAnswer = 3;
+}
