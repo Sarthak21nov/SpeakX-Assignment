@@ -3,6 +3,7 @@
 import axios from 'axios';
 import React, { createContext, useEffect, useState } from 'react'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const DataContext = createContext()
 
 const DataProvider = ({ children }) => {

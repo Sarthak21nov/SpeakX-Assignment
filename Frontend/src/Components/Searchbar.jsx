@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import axios from 'axios';
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../DataProvider';
 
 function Searchbar() {
@@ -8,8 +9,7 @@ function Searchbar() {
   const { setData, setCurrentPage, setTotalPages, currentPage } = useContext(DataContext)
   const itemPerPage = 10;
 
-  const HandleSubmit = async (e)=>{
-    e.preventDefault();
+  const fetchQuery = async ()=>{
     try{
       const response = await axios.get('http://localhost:4000/questions', {
         params: {
@@ -20,13 +20,22 @@ function Searchbar() {
       })
       console.log(response)
       setData(response.data.data.questions)
-      setCurrentPage(1)
       setTotalPages(response.data.data.totalPages)
     }catch(err){
       console.log("Error fetching the data", err)
       alert("An Error occurred while fetching the Data")
     }
   }
+
+  const HandleSubmit = async (e)=>{
+    e.preventDefault();
+    setCurrentPage(1)
+    fetchQuery()
+  }
+
+  useEffect(()=>{
+    fetchQuery();
+  }, [query, currentPage])
 
   const HandleChange = (e)=>{
     SetQuery(e.target.value);

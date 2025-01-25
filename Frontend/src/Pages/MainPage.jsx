@@ -7,20 +7,20 @@ import { DataContext } from '../DataProvider'
 function MainPage() {
 
   const {data, currentPage, setCurrentPage, totalPages } = useContext(DataContext)
-  
-  const HandlePrevious = ()=>{
-    if(currentPage > 1){
-      setCurrentPage((prevPage) => prevPage - 1);
-      window.scrollTo({top: 0, behavior: 'smooth'})
-    }
-  }
 
-  const HandleNext = ()=>{
-    if(currentPage < totalPages){
-      setCurrentPage((prevPage) => prevPage + 1);
-      window.scrollTo({top: 0, behavior: 'smooth'})
+  const HandlePrevious = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prevPage) => prevPage - 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }
+  };
+  
+  const HandleNext = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage((prevPage) => prevPage + 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <div className='m-2'>
