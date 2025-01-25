@@ -8,15 +8,22 @@ import MainPage from './Pages/MainPage'
 function App() {
 
   return (
-    <>
+    <div>
       <Navbar/>
       <Searchbar/>
-      <BrowserRouter>
-        <Routes>
-          <Route path = '/' element={<MainPage/>} />
-        </Routes>
-      </BrowserRouter>
-    </>
+      <div className='grid grid-cols-4'>
+        <div className='md:col-span-3 col-span-4'>
+          <BrowserRouter>
+            <Routes>
+              <Route path = '/' element={<MainPage/>} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+        <div className='md:col-span-1'>
+          <p>Filter the Data Based on Type</p>
+        </div>
+      </div>
+    </div>
   )
 }
 
