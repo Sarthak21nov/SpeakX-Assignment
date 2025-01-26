@@ -30,11 +30,19 @@ Before you begin, ensure you have the following installed on your system:
 
 ## Setup Instructions
 
+## Download or clone the repository to start using the service.
 ### 1. Download and Extract
 
 1. Download the project ZIP file from the provided link or repository.
 2. Extract the downloaded ZIP file to your desired location.
 3. Open the extracted folder in **Visual Studio Code**.
+
+### 2. git clone
+1. Open a directory in a terminal where you want to clone the reopsitory
+2. enter command ( git clone https://github.com/Sarthak21nov/SpeakX-Assignment.git ) in terminal.
+3. It will create a SpeakX-Assignment folder.
+4. Use command ( cd SpeakX-Assignment ) in order to access the Parent Directory of the project.
+5. This folder contains files [ Backend, Frontend, Images, README.md ] which includes respective codes for Frontend and Backend
 
 ---
 
