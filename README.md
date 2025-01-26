@@ -74,7 +74,7 @@ Before you begin, ensure you have the following installed on your system:
 
 ### 2. Frontend Setup
 
-1. Open the **new integrated terminal** in VS Code.
+1. Open the **new integrated terminal** in VS Code by clicking on the plus icon in the image given below.
    ![New Integrated Terminal](./Images/NewIntegratedTerminal.png)
 2. Navigate to the Frontend directory by typing:
    cd Frontend
