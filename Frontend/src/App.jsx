@@ -8,19 +8,16 @@ import MainPage from './Pages/MainPage'
 function App() {
 
   return (
-    <div>
+    <div className='overflow-hidden'>
       <Navbar/>
       <Searchbar/>
-      <div className='grid grid-cols-4'>
-        <div className='md:col-span-3 col-span-4'>
+      <div className='flex justify-center items-center'>
+        <div className='md:col-span-3 col-span-4 '>
           <BrowserRouter>
             <Routes>
               <Route path = '/' element={<MainPage/>} />
             </Routes>
           </BrowserRouter>
-        </div>
-        <div className='md:col-span-1'>
-          <p>Filter the Data Based on Type</p>
         </div>
       </div>
     </div>

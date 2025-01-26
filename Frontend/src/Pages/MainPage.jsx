@@ -24,9 +24,18 @@ function MainPage() {
 
   return (
     <div className='m-2'>
-      {data.map((question, index)=> (
-        <Card key={index} title = {question.title} anagram = {question.type} solution = {question.solution}/>
-      ))}
+      {data && data.length > 0 ? (
+        <div>
+          {data.map((question, index)=>(
+            <Card key={index} title={question.title} anagram={question.type} solution={question.solution}/>
+          ))}
+        </div>
+        ) : (
+          <div className='flex justify-center items-center'>
+            <h1>No Results Found</h1>
+          </div>  
+        )
+      }
       <div className='flex justify-center items-center'>
         <button type="button" className="btn btn-secondary mr-2" onClick={HandlePrevious}>Previous</button>
         <span>Page {currentPage} of {totalPages} </span>
