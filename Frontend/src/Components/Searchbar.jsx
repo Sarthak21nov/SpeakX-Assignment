@@ -25,7 +25,7 @@ function Searchbar() {
 
   const fetchQuery = async ()=>{
     try{
-      const response = await axios.get('http://localhost:4000/questions', {
+      const response = await axios.get('https://speak-x-assignment-gules.vercel.app/questions', {
         params: {
           query: query,
           page: currentPage,
@@ -48,7 +48,7 @@ function Searchbar() {
 
   const FetchQueryBasedOnFilter = async ()=>{
     try{
-      const response = await axios.get('http://localhost:4000/type', {
+      const response = await axios.get('https://speak-x-assignment-gules.vercel.app/type', {
         params: {
           type: filter,
           page: currentPage,
