@@ -16,7 +16,7 @@ const DataProvider = ({ children }) => {
     useEffect(()=>{
         const getInitialData = async ()=>{
             try{
-                const response = await axios.get('http://localhost:4000/getAll',{
+                const response = await axios.get('https://speak-x-assignment-gules.vercel.app/getAll',{
                     params: {
                         page: currentPage,
                         limit: itemPerPage
